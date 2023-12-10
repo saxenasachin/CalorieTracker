@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
 }
 
@@ -58,8 +57,11 @@ dependencies {
     implementation(Compose.viewModelCompose)
     implementation(Compose.activityCompose)
 
-    implementation(DaggerHilt.hiltAndroid)
-    kapt(DaggerHilt.hiltCompiler)
+//    implementation(DaggerHilt.hiltAndroid)
+//    kapt(DaggerHilt.hiltCompiler)
+
+    implementation(Dagger.dagger)
+    kapt(Dagger.daggerCompiler)
 
     implementation(project(Modules.core))
     implementation(project(Modules.coreUi))
@@ -102,7 +104,11 @@ dependencies {
     androidTestImplementation(Testing.composeUiTest)
     androidTestImplementation(Testing.mockkAndroid)
     androidTestImplementation(Testing.mockWebServer)
-    androidTestImplementation(Testing.hiltTesting)
-    kaptAndroidTest(DaggerHilt.hiltCompiler)
+//    androidTestImplementation(Testing.hiltTesting)
+//    kaptAndroidTest(DaggerHilt.hiltCompiler)
     androidTestImplementation(Testing.testRunner)
+}
+
+kapt {
+    correctErrorTypes = true
 }

@@ -6,8 +6,11 @@ import com.example.core.domain.model.Gender
 import com.example.core.domain.model.GoalType
 import com.example.core.domain.model.UserInfo
 import com.example.core.domain.preferences.Preferences
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class DefaultPreferences(
+@Singleton
+class DefaultPreferences @Inject constructor(
     private val sharedPref: SharedPreferences
 ) : Preferences {
     override fun saveGender(gender: Gender) {
