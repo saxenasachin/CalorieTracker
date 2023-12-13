@@ -33,11 +33,8 @@ android {
 }
 
 dependencies {
-//    kapt DaggerHilt.hiltCompiler
-//    implementation DaggerHilt.hiltAndroid
-
-    implementation(Dagger.dagger)
-    kapt(Dagger.daggerCompiler)
+    kapt DaggerHilt.hiltCompiler
+    implementation DaggerHilt.hiltAndroid
 
     testImplementation Testing.junit4
     testImplementation Testing.junitAndroidExt
@@ -56,5 +53,5 @@ dependencies {
     androidTestImplementation Testing.composeUiTest
     androidTestImplementation Testing.mockk
     androidTestImplementation Testing.mockWebServer
-//    androidTestImplementation Testing.hiltTesting
+    androidTestImplementation Testing.hiltTesting
 }
