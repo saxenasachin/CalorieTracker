@@ -32,7 +32,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providerFilterOutDigitsUseCase(): FilterOutDigits {
+    fun provideFilterOutDigitsUseCase(): FilterOutDigits {
         return FilterOutDigits()
     }
 }
