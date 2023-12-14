@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.ui.Modifier
@@ -33,10 +34,12 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val scaffoldState = rememberScaffoldState()
                 Scaffold(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize(),
                     scaffoldState = scaffoldState
-                ) {
+                ) { paddingValues ->
                     NavHost(
+                        modifier = Modifier.padding(paddingValues = paddingValues),
                         navController = navController,
                         startDestination = Route.WELCOME
                     ) {
