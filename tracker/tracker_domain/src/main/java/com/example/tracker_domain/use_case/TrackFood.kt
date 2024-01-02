@@ -15,7 +15,7 @@ class TrackFood(
         food: TrackableFood,
         amount: Int,
         mealType: MealType,
-        data: LocalDate
+        date: LocalDate
     ) {
         repository.insertTrackedFood(
             TrackedFood(
@@ -27,7 +27,7 @@ class TrackFood(
                 imageUrl = food.imageUrl,
                 mealType = mealType,
                 amount = amount,
-                date = data
+                date = date
             )
         )
     }
