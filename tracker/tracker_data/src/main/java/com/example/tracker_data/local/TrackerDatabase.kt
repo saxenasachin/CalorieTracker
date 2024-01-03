@@ -6,6 +6,7 @@ import com.example.tracker_data.local.entity.TrackedFoodEntity
 
 @Database(
     entities = [TrackedFoodEntity::class],
+    exportSchema = false,
     version = 1
 )
 abstract class TrackerDatabase : RoomDatabase() {
